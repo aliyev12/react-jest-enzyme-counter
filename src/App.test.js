@@ -58,7 +58,7 @@ describe('<App />', () => {
     expect(counterDisplay.text()).toContain(0);
   });
 
-  test('clicking button increments counter display', () => {
+  test('clicking increment button increments counter display', () => {
     const counter = 7;
     const wrapper = setup(null, { counter });
 
@@ -71,8 +71,22 @@ describe('<App />', () => {
     expect(counterDisplay.text()).toContain(counter + 1);
   });
 
+  // ==> Add test for decrement button here..
+
   it('matches snapshot', () => {
     const wrapper = setup();
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
+
+
+/*
+  test('clicking decrement button decrements counter display', () => {
+    const counter = 5;
+    const wrapper = setup(null, { counter });
+    const button = findByTestAttr(wrapper, 'decrement-button');
+    button.simulate('click');
+    const counterDisplay = findByTestAttr(wrapper, 'counter-display');
+    expect(counterDisplay.text()).toContain(counter - 1);
+  });
+*/

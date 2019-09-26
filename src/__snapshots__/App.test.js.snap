@@ -22,5 +22,11 @@ exports[`<App /> matches snapshot 1`] = `
   >
     Increment counter +
   </button>
+  <button
+    data-testid="decrement-button"
+    onClick={[Function]}
+  >
+    Decrement counter -
+  </button>
 </div>
 `;
