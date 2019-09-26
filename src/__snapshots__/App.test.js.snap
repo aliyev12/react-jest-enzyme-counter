@@ -16,6 +16,12 @@ exports[`<App /> matches snapshot 1`] = `
       0
     </span>
   </h1>
+  <div
+    className="error-alert hide-error"
+    data-testid="error-alert"
+  >
+    Error: Counter can't go below zero!
+  </div>
   <button
     data-testid="increment-button"
     onClick={[Function]}

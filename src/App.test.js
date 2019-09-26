@@ -73,6 +73,16 @@ describe('<App />', () => {
 
   // ==> Add test for decrement button here..
 
+  test(`don't decrement counter if count is zero`, () => {
+    const counter = 0;
+    const errorText = `Error: Counter can't go below zero!`;
+    const wrapper = setup(null, { counter, errorText });
+    const button = findByTestAttr(wrapper, 'decrement-button');
+    const errorAlert = findByTestAttr(wrapper, 'error-alert');
+    button.simulate('click');
+    expect(errorAlert.text()).toBe(errorText);
+  });
+
   it('matches snapshot', () => {
     const wrapper = setup();
     expect(toJson(wrapper)).toMatchSnapshot();
